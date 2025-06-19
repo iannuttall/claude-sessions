@@ -55,14 +55,15 @@ sessions/                      # Session storage directory
 
 ## 🛠️ Installation
 
-1. Clone this repository or copy the folders to your project:
+1. Create a `.claude` directory in your project root
+1. Clone this repo somewhere else, not in your project
    ```bash
    git clone git@github.com:iannuttall/claude-sessions.git
-   # Or copy the commands and sessions folders to your project root
    ```
-
-2. Create the sessions tracking file:
+1. Take the `commands` directory from the cloned repo and put it in your projects `.claude` directory
+1. Create the sessions tracking file in the `.claude` directory:
    ```bash
+   cd .claude
    mkdir -p sessions
    touch sessions/.current-session
    ```
@@ -71,6 +72,20 @@ sessions/                      # Session storage directory
    ```
    sessions/
    ```
+### What?!
+
+However you get there, the structure looks like this
+
+```
+my_important_project/
+├── .claude/
+   ├── commands/
+      ├── the `.md` files go here. These are the Claude commands! See [docs on Slash commands](https://docs.anthropic.com/en/docs/claude-code/slash-commands)
+   ├── sessions/
+      ├── .current-session          # Tracks the active session filename
+      ├── 2025-01-16-1347.md       # Example session file
+      └── [YYYY-MM-DD-HHMM-name].md  # Session naming format
+```
 
 ## 📝 How It Works
 
